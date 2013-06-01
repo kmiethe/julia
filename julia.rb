@@ -5,16 +5,22 @@ class Julia
 	def initialize
 	end
 
-	def paint
-		png = ChunkyPNG::Image.new(200, 200, ChunkyPNG::Color::WHITE)
-		png[0, 0] = ChunkyPNG::Color::BLACK
-		
-		a = 0
-		while a < 200
-  		png[a, 0] = ChunkyPNG::Color::BLACK
-  		a += 1
+	def black
+		y = 0
+		while y < 200
+			x = 0
+			while x < 200
+				@png[x, y] = ChunkyPNG::Color::BLACK
+				x += 1
+			end
+			y += 1
+		end
 	end
-		png.save('julia.png')
+
+	def paint
+		@png = ChunkyPNG::Image.new(200, 200, ChunkyPNG::Color::WHITE)
+		black		
+		@png.save('julia.png')
 	end
 end
 
