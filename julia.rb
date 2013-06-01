@@ -1,4 +1,15 @@
 require 'chunky_png'
 
-png = ChunkyPNG::Image.new(100, 100, ChunkyPNG::Color::WHITE)
-png.save('filename.png', :interlace => true)
+
+class Julia
+	def initialize
+	end
+
+	def paint
+		png = ChunkyPNG::Image.new(200, 200, ChunkyPNG::Color::WHITE)
+		png.save('julia.png', :interlace => true)
+	end
+end
+
+picture = Julia.new
+picture.paint
