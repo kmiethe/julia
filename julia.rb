@@ -10,10 +10,14 @@ class Julia
 		png[0, 0] = ChunkyPNG::Color::BLACK
 		
 		a = 0
-		while a < 200
-  		png[a, 0] = ChunkyPNG::Color::BLACK
-  		a += 1
-	end
+		b = 0
+		while a < 200 && b < 200
+			png[a, b] = ChunkyPNG::Color::BLACK
+			a += 1
+			b += 1 if a == 200
+			a = 0 if a == 200
+		end
+
 		png.save('julia.png')
 	end
 end
